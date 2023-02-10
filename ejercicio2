@@ -1,0 +1,5 @@
+#lista de 1 al 100 en orden inverso
+numeros = list(range(1,101))
+if numeros:
+  for numero in reversed(numeros):
+    print(numero)
