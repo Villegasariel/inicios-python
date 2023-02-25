@@ -1,0 +1,9 @@
+import calculadora 
+
+a = 10
+b = 5 
+
+print(f"{a} + {b} = {calculadora.sumar(a, b)}")
+print(f"{a} - {b} = {calculadora.restar(a, b)}")
+print(f"{a} * {b} = {calculadora.multiplicar(a, b)}")
+print(f"{a} / {b} = {calculadora.dividir(a, b)}")
