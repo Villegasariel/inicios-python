@@ -1,0 +1,7 @@
+# Crear un archivo de texto
+with open('mi_archivo.txt', 'w') as f:
+    f.write('Hola, este es mi archivo de texto\n')
+
+# Abrir el archivo y escribir dentro de él
+with open('mi_archivo.txt', 'a') as f:
+    f.write('Estoy añadiendo más texto a mi archivo\n')
