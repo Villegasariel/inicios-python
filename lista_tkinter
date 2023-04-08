@@ -1,0 +1,28 @@
+import tkinter as tk
+
+class ListaSeleccionable:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("Lista Seleccionable")
+        self.create_widgets()
+
+    def create_widgets(self):
+        tk.Label(self.master, text="Selecciona un elemento:").pack()
+        self.listbox = tk.Listbox(self.master)
+        self.listbox.pack()
+        self.listbox.insert(tk.END, "Fuego")
+        self.listbox.insert(tk.END, "Agua")
+        self.listbox.insert(tk.END, "Tierra")
+        self.listbox.insert(tk.END, "Aire")
+        self.listbox.bind("<<ListboxSelect>>", self.update_label)
+        self.label = tk.Label(self.master, text="Ningún elemento seleccionado")
+        self.label.pack()
+
+    def update_label(self, event):
+        seleccion = self.listbox.get(self.listbox.curselection())
+        self.label.configure(text=f"Seleccionado: {seleccion}")
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    app = ListaSeleccionable(root)
+    root.mainloop()
