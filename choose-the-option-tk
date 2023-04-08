@@ -1,0 +1,30 @@
+import tkinter as tk
+
+class RadioButtons:
+    def __init__(self, master):
+        self.master = master
+        self.master.title("RadioButtons")
+        self.var = tk.StringVar()
+        self.var.set("No seleccionado")
+        self.create_widgets()
+
+    def create_widgets(self):
+        tk.Label(self.master, text="Seleccione opción correcta:").pack()
+        tk.Radiobutton(self.master, text="La programación es compleja", variable=self.var, value="Opción 1",
+                       command=self.print_selection).pack()
+        tk.Radiobutton(self.master, text="La programación es dificil", variable=self.var, value="Opción 2",
+                       command=self.print_selection).pack()
+        tk.Radiobutton(self.master, text="Solo tenes que practicar más", variable=self.var, value="Opción 3",
+                       command=self.print_selection).pack()
+        tk.Button(self.master, text="Reiniciar", command=self.reset_selection).pack()
+
+    def print_selection(self):
+        print("Seleccionado:", self.var.get())
+
+    def reset_selection(self):
+        self.var.set("No seleccionado")
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    app = RadioButtons(root)
+    root.mainloop()
